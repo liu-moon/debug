@@ -1,0 +1,142 @@
+# debug
+
+## useful command
+
+清屏
+
+或者 Ctrl+L
+
+```shell
+!clear
+```
+
+开始调试
+
+```shell
+start
+```
+
+列出源码
+
+```shell
+list
+```
+
+执行下一行代码 不进入函数
+
+```shell
+next
+```
+
+执行下n行代码
+
+```shell
+next n
+```
+
+在函数处添加断电
+
+```shell
+b fun_name
+```
+
+查看断点信息
+
+```shell
+info breakpoints
+```
+
+运行代码
+
+```shell
+r
+run
+```
+
+显示源代码窗口
+
+```shell
+layout src
+```
+
+显示调用栈
+
+```shell
+bt
+```
+
+运行完当前函数并返回到调用该函数的地方
+
+```shell
+finish
+```
+
+逐步执行代码，进入函数调用内部进行调试
+
+```shell
+s
+step
+```
+
+重新绘制当前的 TUI（文本用户界面）窗口
+
+```shell
+refresh
+```
+
+继续运行程序，直到下一个断点、异常、或程序结束
+
+```shell
+continue
+```
+
+删除断点
+
+在使用 delete 命令之前，你可以使用 info breakpoints 命令查看所有断点的编号
+
+```shell
+(gdb) delete num
+```
+
+显示当前程序中所有线程的信息
+
+```shell
+info threads
+```
+
+打印变量 a 的当前值
+
+```shell
+print a
+```
+
+显示变量 a 的类型
+
+```shell
+whatis a
+```
+
+gdb --tui --silent your_program
+
+--tui：启用文本用户界面（TUI，Text User Interface）模式
+--silent：启用静默模式，即启动时不显示 gdb 的版本信息、版权信息和欢迎消息
+
+显示当前函数中所有局部变量的值
+
+```shell
+info locals
+```
+
+自动显示指定表达式或变量的值，对于调试过程中持续监视某些变量的变化非常有用。
+
+```shell
+display <表达式>
+```
+
+Valgrind 是一个非常强大的程序分析工具，主要用于内存泄漏检测和调试内存管理问题。它能够帮助开发者检测 C、C++ 以及其他使用动态内存分配的程序中常见的错误，如内存泄漏、非法内存访问和未初始化内存的使用等。
+
+分析
+
+```shell
+valgrind ./main
+```
