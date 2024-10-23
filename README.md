@@ -203,3 +203,15 @@ gcc -Wall main.c -o prog
 ```c++
 7 == x
 ```
+
+检测和报告在类型转换过程中可能出现的问题或潜在错误。
+
+```shell
+-Wconversion
+```
+
+将所有警告视为错误
+
+```shell
+-Werror
+```
