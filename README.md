@@ -227,3 +227,28 @@ printf debugging
     printf("a = %d",a);
 #endif
 ```
+
+停用
+
+```c++
+#define DEBUG 1
+#undef DEBUG
+
+#if DEBUG
+    printf("a = %d",a);
+#endif
+```
+
+或者
+
+```c++
+#if DEBUG
+    printf("a = %d",a);
+#endif
+```
+
+在编译的时候加入
+
+```shell
+gcc -DDEBUG swap_buggy.c -o prog
+```
