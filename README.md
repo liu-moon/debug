@@ -140,3 +140,30 @@ Valgrind 是一个非常强大的程序分析工具，主要用于内存泄漏�
 ```shell
 valgrind ./main
 ```
+
+indent
+
+在编程中，indent 是一个 Unix 工具，主要用于格式化 C、C++ 代码。它能够将代码格式化为一致的缩进风格，增强代码的可读性，确保不同的代码块在缩进和排版上统一。
+
+```shell
+indent filename
+indent -gnu filename
+indent -kr filename
+indent -bsd filename
+```
+
+查看gdb版本
+
+```shell
+gdb --version
+```
+
+lldb
+
+LLDB 是一个调试器，与 gdb 类似，用于调试程序。LLDB 是由苹果公司开发的，并且作为 LLVM 项目的一部分维护。它支持 C、C++、Objective-C 和 Swift 等多种编程语言。LLDB 提供了强大的调试功能，包括断点设置、单步调试、查看内存、变量值等，与 gdb 类似，适合调试大型和复杂项目。
+
+退出
+
+```shell
+q
+```
