@@ -217,3 +217,13 @@ gcc -Wall main.c -o prog
 ```
 
 可以对用不同的编译器对一个程序进行检查
+
+printf debugging
+
+```c++
+#define DEBUG 1
+
+#if DEBUG
+    printf("a = %d",a);
+#endif
+```
