@@ -215,3 +215,5 @@ gcc -Wall main.c -o prog
 ```shell
 -Werror
 ```
+
+可以对用不同的编译器对一个程序进行检查
