@@ -642,3 +642,62 @@ detach
 ```
 
 用于从正在调试的进程中分离，使得程序继续运行，而不再由 gdb 控制。detach 命令的主要作用是停止对目标进程的调试，而不会终止或影响它的运行状态。
+
+Core dump（核心转储） 是操作系统在程序崩溃时生成的一个文件，保存了程序在崩溃时的内存状态。它通常包含程序的内存内容、CPU 寄存器的值、进程状态等信息，用于帮助开发者分析和调试导致程序崩溃的问题。
+
+命令 nl xxx.c 用于显示文件 xxx.c 的内容，并在每一行的开头添加行号。nl 是 number lines 的缩写，它的作用是给文件的每一行内容加上行号，方便阅读和调试代码。
+
+```bash
+nl [选项] 文件名
+```
+
+显示当前 shell 会话中所有可用的系统资源限制
+
+```bash
+ulimit -a
+```
+
+允许生成 core dump 文件
+
+```bash
+sudo ulimit -c unlimited
+```
+
+查看core dump 文件限制
+
+```bash
+ulimit -c
+```
+
+systemd-coredump
+
+systemd-coredump 是 systemd 中的一个服务，负责**处理和管理进程崩溃时生成的核心转储（core dump）**文件。systemd-coredump 通过拦截程序崩溃时产生的核心转储，将其存储在指定的地方，并可以使用 coredumpctl 工具查看和分析这些核心转储文件。
+
+安装
+
+```bash
+sudo apt-get install systemd-coredump
+```
+
+查看存储的核心转储： 你可以使用 coredumpctl 工具列出系统中存储的所有核心转储文件。它会显示哪些程序崩溃了，崩溃的时间和相关信息。
+
+```bash
+coredumpctl
+```
+
+导出核心转储文件： 你可以将核心转储文件导出到文件系统，以便在其他地方分析
+
+```bash
+coredumpctl dump
+coredumpctl dump > core.dump
+```
+
+直接在 gdb 中加载和分析核心转储文件
+
+启动 gdb 调试最近的核心转储： 如果你想直接调试系统中最近的核心转储，可以使用以下命令：
+
+```bash
+coredumpctl gdb
+```
+
+coredumpctl 会找到最近发生的崩溃，启动 gdb 并加载与该崩溃相关的核心转储文件和可执行文件。然后你可以在 gdb 中调试这个崩溃的程序。
