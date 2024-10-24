@@ -252,3 +252,41 @@ printf debugging
 ```shell
 gcc -DDEBUG swap_buggy.c -o prog
 ```
+
+编译程序时生成调试信息
+
+```shell
+gcc -g
+```
+
+cmake中编译程序时生成调试信息
+
+1. 使用 CMAKE_BUILD_TYPE 设置调试模式
+  在 CMake 文件中设置编译类型为 Debug，CMake 会自动添加 -g 选项：
+  
+  ```cmake
+  set(CMAKE_BUILD_TYPE Debug)
+  ```
+
+  然后，在构建项目时，确保使用以下命令生成调试信息：
+
+  ```bash
+  cmake -S . -B build -DCMAKE_BUILD_TYPE=Debug
+  cmake --build build
+  ```
+
+2. 手动添加编译选项
+  可以直接在 CMakeLists.txt 中通过 CMAKE_CXX_FLAGS 或 CMAKE_C_FLAGS 来添加 -g 选项。
+
+  ```cmake
+  set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -g")
+  set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -g")
+  ```
+
+3. 为特定的目标添加 -g
+  如果你只想为某个特定的目标添加 -g 选项，可以使用 target_compile_options()：
+  
+  ```cmake
+  add_executable(my_program main.cpp)
+  target_compile_options(my_program PRIVATE -g)
+  ```
