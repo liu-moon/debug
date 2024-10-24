@@ -17,7 +17,7 @@ node_t* createListOfFive(){
     one->next = two;
     two->next = three;
     three->next = four;
-    four = NULL;
+    four->next = five;
     five->next = NULL;
 
     one->data = 1;
