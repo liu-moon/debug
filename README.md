@@ -767,3 +767,18 @@ $3 = 8
 (gdb) x/1bb &mike.grade
 (gdb) x/1cb &mike.grade
 ```
+
+commands 命令用于为断点指定一系列命令，这些命令会在程序运行到该断点时自动执行。通过 commands，你可以指定在程序到达某个断点时 gdb 应该执行的调试操作，常用于自动化调试工作流程。
+
+```bash
+(gdb) commands
+>print size
+>bt
+>end
+```
+
+查看 写好的commands
+
+```bash
+info breakpoints
+```
