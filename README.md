@@ -584,3 +584,5 @@ up
 段错误（Segmentation fault）发生在程序试图访问它没有权限使用的内存区域
 
 内存泄露:程序运行时内存回收失败
+
+Stack Overflow
