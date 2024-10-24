@@ -574,3 +574,5 @@ down
 ```bash
 up
 ```
+
+段错误（Segmentation fault）发生在程序试图访问它没有权限使用的内存区域
