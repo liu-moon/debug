@@ -330,3 +330,19 @@ info scope <filename>
 ```bash
 info types
 ```
+
+设置一个临时断点
+
+```bash
+tbreak <location>
+```
+
+`<location>`：可以是函数名、行号或地址，指定你希望设置临时断点的位置。
+
+设置断点
+
+```bash
+break <location>
+```
+
+`<location>`：可以是函数名、行号、地址，甚至是某些条件。它指定你希望设置断点的程序位置。
