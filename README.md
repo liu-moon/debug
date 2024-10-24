@@ -517,3 +517,10 @@ display /b <expression>
 - /o：八进制格式。
 - /t：二进制格式。
 - /f：浮点格式。
+
+搜索包含某个关键词的命令或帮助主题
+
+```bash
+apropos <keyword>
+apropos tui
+```
