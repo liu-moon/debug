@@ -141,6 +141,12 @@ Valgrind 是一个非常强大的程序分析工具，主要用于内存泄漏�
 valgrind ./main
 ```
 
+检测程序 main 中的内存泄漏问题的命令。
+
+```shell
+valgrind --leak-check=full ./main
+```
+
 indent
 
 在编程中，indent 是一个 Unix 工具，主要用于格式化 C、C++ 代码。它能够将代码格式化为一致的缩进风格，增强代码的可读性，确保不同的代码块在缩进和排版上统一。
@@ -576,3 +582,5 @@ up
 ```
 
 段错误（Segmentation fault）发生在程序试图访问它没有权限使用的内存区域
+
+内存泄露:程序运行时内存回收失败
