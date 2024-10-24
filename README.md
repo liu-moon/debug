@@ -701,3 +701,30 @@ coredumpctl gdb
 ```
 
 coredumpctl 会找到最近发生的崩溃，启动 gdb 并加载与该崩溃相关的核心转储文件和可执行文件。然后你可以在 gdb 中调试这个崩溃的程序。
+
+生成一个正在运行进程的核心转储文件（core dump）
+
+gcore 是 gdb (GNU 调试器) 提供的一个命令，用于生成一个正在运行进程的核心转储文件（core dump）。它允许你在不让进程崩溃的情况下，捕获当前进程的内存状态，用于后续分析和调试。
+
+```bash
+sudo gcore <pid>
+```
+
+加载和调试核心转储（core dump）文件的命令
+
+```bash
+gdb <executable> -c <core_file>
+```
+
+示例：
+假设你有一个名为 myapp 的程序，并且在运行时发生了崩溃，系统生成了一个核心转储文件 core.8822。你可以使用以下命令在 gdb 中调试这个核心转储文件：
+
+```bash
+gdb myapp -c core.8822
+```
+
+若没有源码可以
+
+```bash
+(gdb) file ./prog
+```
