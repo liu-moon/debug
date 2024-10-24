@@ -524,3 +524,5 @@ display /b <expression>
 apropos <keyword>
 apropos tui
 ```
+
+![program_stack](./pic/program_stack.png)
