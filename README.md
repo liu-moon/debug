@@ -397,3 +397,10 @@ $ tty
 ```bash
 (gdb) run > output.txt
 ```
+
+添加条件断点
+
+```bash
+br 9 if i > 995
+br 9 if i > 995 && i < 999
+```
