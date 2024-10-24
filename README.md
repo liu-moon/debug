@@ -254,6 +254,11 @@ gcc -DDEBUG swap_buggy.c -o prog
 ```
 
 编译程序时生成调试信息
+在我们编译的代码中添加调试符号
+
+- 文件名
+- 行号
+- 符号名
 
 ```shell
 gcc -g
@@ -290,3 +295,7 @@ cmake中编译程序时生成调试信息
   add_executable(my_program main.cpp)
   target_compile_options(my_program PRIVATE -g)
   ```
+
+关闭优化
+
+gcc -O0 是 GCC 编译器的一个选项，用于关闭优化。当你编译代码时，编译器通常会进行不同程度的优化，以提高代码的执行效率。然而，优化有时会使得调试变得更加复杂，因为编译器可能会对代码进行重排或省略某些部分。在某些情况下，优化可能会隐藏一些调试信息。
