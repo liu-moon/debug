@@ -592,3 +592,5 @@ Stack Overflow
 ```bash
 clang -g leak.c -fsanitize=leak
 ```
+
+Delta Debugging（增量调试）是一种自动化调试技术，用于缩小导致错误的输入或代码的范围。其目的是在程序发生错误时，通过不断地减少测试用例的大小或修改程序代码，来找到引发错误的最小输入或最小代码改动。
