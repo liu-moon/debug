@@ -586,3 +586,9 @@ up
 内存泄露:程序运行时内存回收失败
 
 Stack Overflow
+
+使用 Clang 编译器编译程序并启用 LeakSanitizer 来检测内存泄漏问题的命令。
+
+```bash
+clang -g leak.c -fsanitize=leak
+```
