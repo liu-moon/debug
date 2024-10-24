@@ -311,3 +311,22 @@ set listsize <number>
 ```bash
 list <number>
 ```
+
+打印变量、类型或表达式的类型信息
+
+```bash
+ptype <name>
+```
+
+显示指定函数或文件范围内的所有变量和函数
+
+```bash
+info scope <function_name>
+info scope <filename>
+```
+
+列出程序中定义的所有类型
+
+```bash
+info types
+```
