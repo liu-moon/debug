@@ -382,3 +382,18 @@ winheight <window> <height>
 
 - <window>：指定要调整的窗口，常用的有 src（源代码窗口）、asm（汇编窗口）、regs（寄存器窗口）等。
 - <height>：设置窗口的高度（行数），即窗口显示的行数。
+
+设置程序的输入/输出终端
+
+```bash
+$ tty
+/dev/pts/4
+
+(gdb) tty /dev/pts/4
+```
+
+输出到文件
+
+```bash
+(gdb) run > output.txt
+```
