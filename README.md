@@ -451,3 +451,29 @@ rwatch <expression>
 即当指定的变量或内存地址被读取时，程序会暂停执行。这与 watch 命令（用于监视变量的写操作）不同，rwatch 专注于监视变量的读取操作，帮助你调试程序中变量何时、如何被读取。
 
 <expression>：可以是一个变量名或内存地址。当该变量或地址的内容被读取时，程序会暂停。
+
+禁用断点、观察点或捕捉点
+
+```bash
+disable [breakpoints] [<number> ...]
+disable watchpoints [<number> ...]
+disable catchpoints [<number> ...]
+```
+
+- breakpoints：禁用指定的断点。可以通过编号指定某个断点，或者不指定编号时禁用所有断点。
+- watchpoints：禁用指定的观察点。
+- catchpoints：禁用指定的捕捉点。
+
+将你当前设置的断点保存到一个文件中
+
+```bash
+save breakpoints <filename>
+save breakpoints debugging_session_august.txt
+```
+
+加载保存的断点
+可以在以后的调试会话中使用 source 命令从文件中恢复断点：
+
+```bash
+(gdb) source breakpoints.txt
+```
