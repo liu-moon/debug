@@ -477,3 +477,43 @@ save breakpoints debugging_session_august.txt
 ```bash
 (gdb) source breakpoints.txt
 ```
+
+自动显示指定表达式或变量的值
+每当程序暂停时（例如遇到断点或单步执行时），gdb 会自动显示这些表达式的当前值。这个命令对于在调试过程中持续监视某些变量的变化非常有用。
+
+```bash
+display <expression>
+```
+
+- <expression>：你希望自动显示的变量或表达式。可以是简单的变量、数组、指针，甚至复杂的表达式。
+
+停止显示：
+如果你不再希望自动显示某个表达式或变量，可以使用 undisplay 命令来停止显示，格式如下：
+
+```bash
+(gdb) undisplay <display-number>
+```
+
+查看当前正在显示的表达式：
+你可以使用 info display 查看所有当前设置的自动显示表达式：
+
+```bash
+(gdb) info display
+```
+
+以字节（byte）格式显示变量 p 的值
+
+```bash
+display /b <expression>
+```
+
+- /b：字节（byte）格式。
+- /h：半字（halfword）格式（2 字节）。
+- /w：字（word）格式（4 字节）。
+- /g：双字（giant word）格式（8 字节）。
+- /x：十六进制格式。
+- /d：十进制格式。
+- /u：无符号十进制格式。
+- /o：八进制格式。
+- /t：二进制格式。
+- /f：浮点格式。
