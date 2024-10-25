@@ -919,3 +919,17 @@ Num     Address       Line    Function
 ```
 
 程序将恢复到检查点 1 的状态，并从那个位置继续调试
+
+DDD（Data Display Debugger）是一个基于图形用户界面的调试工具，它为多种调试器（如 gdb、dbx 和 xdb）提供了可视化界面。DDD 可以用于调试 C、C++、Fortran 等多种语言编写的程序，并且能够通过图形化方式直观地展示变量、数据结构、调用栈等信息，简化调试过程。
+
+安装
+
+```bash
+sudo apt-get install ddd
+```
+
+启动
+
+```bash
+ddd ./my_program
+```
