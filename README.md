@@ -838,3 +838,10 @@ python gdb.execute("next 3")
 以静默模式启动 gdb
 
 gdb --quiet 命令用于以静默模式启动 gdb，即在启动时不显示通常的欢迎信息和版本号等内容。这个选项非常适合需要干净调试环境的情况，尤其是在编写脚本或希望减少启动时输出的情况下。
+
+修改程序中的变量
+
+```bash
+(gdb) set count = 42
+(gdb) set var value = 42
+```
