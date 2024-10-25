@@ -945,3 +945,14 @@ cppcheck 是一个静态代码分析工具，用于检查 C 和 C++ 代码中的
 ```bash
 (gdb) info vtbl base_ptr
 ```
+
+对于宏定义的函数，如果要在gdb中调试，要在编译的时候添加
+
+```make
+CCFLAGS= -ggdb3
+```
+
+```bash
+info macros
+info marco <definename>
+```
