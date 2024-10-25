@@ -933,3 +933,7 @@ sudo apt-get install ddd
 ```bash
 ddd ./my_program
 ```
+
+strace 是 Linux 上一个非常强大的调试工具，它用于跟踪和记录一个正在运行的进程或启动的新进程所执行的系统调用及其返回值。strace 是系统管理员和开发人员在调试、分析程序行为和排查问题时常用的工具之一，特别是当程序表现异常（如崩溃、挂起或权限错误）时。
+
+ltrace 是一个 Linux 下的调试工具，用于跟踪程序中使用的库函数调用，类似于 strace，但重点不同。strace 跟踪系统调用（如 open, read, write 等），而 ltrace 跟踪的是用户空间的动态库调用，如 printf, malloc, free 等函数。
