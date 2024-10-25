@@ -826,3 +826,15 @@ shell <command>
 在 gdb 中，edit 命令用于在一个文本编辑器中打开当前正在调试的源代码文件。这样你可以在调试时直接修改代码，而不必离开 gdb。gdb 会调用你系统默认的编辑器（如 vim、nano 或 emacs）来打开源文件。
 
 可以在gdb中使用python
+
+```python
+python import gdb
+python gdb.execute("start")
+python gdb.execute("next 3")
+```
+
+或者新建xxx.py文件，在gdb中执行 source xxx.py
+
+以静默模式启动 gdb
+
+gdb --quiet 命令用于以静默模式启动 gdb，即在启动时不显示通常的欢迎信息和版本号等内容。这个选项非常适合需要干净调试环境的情况，尤其是在编写脚本或希望减少启动时输出的情况下。
