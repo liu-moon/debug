@@ -939,3 +939,9 @@ strace 是 Linux 上一个非常强大的调试工具，它用于跟踪和记录
 ltrace 是一个 Linux 下的调试工具，用于跟踪程序中使用的库函数调用，类似于 strace，但重点不同。strace 跟踪系统调用（如 open, read, write 等），而 ltrace 跟踪的是用户空间的动态库调用，如 printf, malloc, free 等函数。
 
 cppcheck 是一个静态代码分析工具，用于检查 C 和 C++ 代码中的潜在错误、性能问题、安全漏洞、代码风格等问题。它不会编译代码，而是通过分析源代码的语法和逻辑结构来识别代码中的问题，适用于跨平台的 C/C++ 项目。
+
+查看 C++ 程序中某个对象的虚函数表（vtable）信息
+
+```bash
+(gdb) info vtbl base_ptr
+```
