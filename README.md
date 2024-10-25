@@ -857,3 +857,35 @@ target record-full
 next
 reverse-next
 ```
+
+查看线程信息
+
+```bash
+info threads
+```
+
+切换线程
+
+```bash
+thread 3
+bt
+finish
+```
+
+在调试多线程程序时锁定调试器的调度，使得在调试时只允许一个线程执行，而其他线程暂停。
+
+```bash
+set scheduler-locking [off|on|step]
+```
+
+set scheduler-locking on 是 gdb 中的一个设置，用于在调试多线程程序时锁定调试器的调度，使得在调试时只允许一个线程执行，而其他线程暂停。这对于调试多线程程序中的并发问题非常有用，因为它可以确保你专注于某个线程的执行，而不会受到其他线程的干扰。
+
+- off：默认设置，所有线程都会运行，gdb 不会锁定线程调度。
+- on：只有当前线程会运行，其他线程将暂停，直到调试器切换到另一个线程。
+- step：当你单步执行（使用 step 或 next 等命令）时，只有当前线程会执行；在继续执行（使用 continue）时，所有线程都会运行。
+
+显示所有线程的调用栈
+
+```bash
+thread apply all bt
+```
