@@ -378,7 +378,9 @@ focus <window>
 - focus src：将焦点切换到源代码窗口。
 - focus asm：将焦点切换到汇编代码窗口。
 - focus regs：将焦点切换到寄存器窗口。
-- focus next：将焦点切换到下一个窗口，按顺序循环。
+- focus next：将焦点切换到下一个窗口。可用于切换到cmd
+- ctrl + p ：上一条命令
+- ctrl + n ：下一条命令
 
 调整 TUI 模式下窗口的高度
 
